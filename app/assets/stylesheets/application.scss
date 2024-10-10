@@ -1,1 +1,12 @@
 @import "bootstrap";
+
+@font-face {
+  font-family: 'BerkeleyMono';
+  src: url(asset-path('BerkeleyMonoTrial-Regular.ttf')) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'BerkeleyMono', sans-serif;
+}
