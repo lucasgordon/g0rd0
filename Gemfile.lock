@@ -84,6 +84,8 @@ GEM
     bootstrap (5.3.3)
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 2.11.8, < 3)
+    bootstrap-icons (1.0.14)
+      nokogiri (~> 1)
     brakeman (6.2.1)
       racc
     builder (3.3.0)
@@ -223,6 +225,7 @@ GEM
     rake (13.2.1)
     rdoc (6.7.0)
       psych (>= 4.0.0)
+    redcarpet (3.6.0)
     regexp_parser (2.9.2)
     reline (0.5.10)
       io-console (~> 0.5)
@@ -334,7 +337,8 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
-  bootstrap
+  bootstrap (~> 5.3.0)
+  bootstrap-icons
   brakeman
   capybara
   cssbundling-rails
@@ -343,6 +347,7 @@ DEPENDENCIES
   jbuilder
   puma (>= 5.0)
   rails (~> 7.2.1)
+  redcarpet
   rubocop-rails-omakase
   sassc-rails
   selenium-webdriver

@@ -1,9 +1,8 @@
-<%= form_with(model: post) do |form| %>
+<%= form_with(model: post, class: "needs-validation", novalidate: true) do |form| %>
   <% if post.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
+    <div class="alert alert-danger" role="alert">
+      <h4 class="alert-heading"><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h4>
+      <ul class="mb-0">
         <% post.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
@@ -11,7 +10,17 @@
     </div>
   <% end %>
 
+  <div class="mb-3">
+    <%= form.label :title, class: "form-label text-light" %>
+    <%= form.text_field :title, class: "form-control bg-dark text-light", required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :body, class: "form-label text-light" %>
+    <%= form.text_area :body, class: "form-control bg-dark text-light", rows: 5, required: true %>
+  </div>
+
   <div>
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>

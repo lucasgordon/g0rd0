@@ -1,5 +1,7 @@
 @import "bootstrap";
 
+@import "bootstrap-icons";
+
 @font-face {
   font-family: 'BerkeleyMono';
   src: url(asset-path('BerkeleyMonoTrial-Regular.ttf')) format('truetype');
@@ -9,4 +11,12 @@
 
 body {
   font-family: 'BerkeleyMono', sans-serif;
+}
+
+.border-contrast-bottom {
+  border-bottom: 0.7px solid rgba(255, 255, 255, 0.7);
+}
+
+.border-contrast-right {
+  border-right: 0.7px solid rgba(255, 255, 255, 0.7);
 }
