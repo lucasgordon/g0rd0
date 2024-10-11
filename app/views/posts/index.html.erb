@@ -1,23 +1,66 @@
-<p style="color: green"><%= notice %></p>
+<% content_for :title, "G0RD0.com" %>
 
-<% content_for :title, "Posts" %>
-
-<h1>Posts</h1>
-
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><%= post.title %></h5>
-        <p class="card-text"><%= post.body %></p>
-        <%= link_to "Show", post, class: "btn btn-primary" %>
-      </div>
+<div class="border-contrast-bottom" >
+  <div class="align-items-center text-left">
+    <h1 class="m-3 mb-2">LUCAS GORDON</h1>
+    <div class="text-secondary vw-100 mb-2">
+      <p class="mx-3 mb-1 text-secondary d-inline-flex align-items-center">
+        g0rd0.com
+        <span class="mx-2">|</span>
+        <a
+          href="https://x.com/morninggordo"
+          target="_blank"
+          class="text-secondary"
+          ><i class="bi bi-twitter-x"></i
+        ></a>
+        <span class="mx-2">|</span>
+        <a
+          href="https://www.linkedin.com/in/lucgordon"
+          target="_blank"
+          class="text-secondary"
+          ><i class="bi bi-linkedin"></i
+        ></a>
+        <span class="mx-2">|</span>
+        <a
+          href="https://github.com/lucasgordon"
+          target="_blank"
+          class="text-secondary"
+          ><i class="bi bi-github"></i
+        ></a>
+        <span class="mx-2">|</span>
+        <a
+          href="https://www.youtube.com/@gordonlucas"
+          target="_blank"
+          class="text-secondary"
+          ><i class="bi bi-youtube"></i
+        ></a>
+        <span class="mx-2">|</span>
+        <a
+          href="mailto:lucas.gordon@queensu.ca"
+          target="mailto:lucas.gordon@queensu.ca"
+          class="text-secondary"
+          ><i class="bi bi-envelope"></i
+        ></a>
+      </p>
     </div>
-  <% end %>
+  </div>
 </div>
 
-<%= link_to "New post", new_post_path %>
+<div class="row">
+  <div class="col-md-1 border-contrast-right vh-100">
+  </div>
+  <div class="col-md-10">    
+    <% @posts.each do |post| %>
+      <div class="row mb-4">
+        <div class="col-md-2 text-muted">
+          <%= post.created_at.strftime("%b %d, %Y") %>
+        </div>
+        <div class="col-md-10">
+          <h4><%= link_to post.title, post_path(post), class: "text-light" %></h4>
+          <p class="text-secondary"><%= truncate(post.body, length: 150, separator: ' ') %></p>
+        </div>
+      </div>
+      <hr class="border-secondary">
+    <% end %>
+  </div>
+</div>
