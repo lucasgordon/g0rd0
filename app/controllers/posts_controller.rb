@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   # GET /posts/1 or /posts/1.json
   def show
     unless @post.published? || lucas?
-      redirect_to root_path
+      redirect_to root_path, notice: "Lucas is still working on this post. Will it be ready soon? Who knows..."
     end
   end
 
@@ -85,8 +85,7 @@ class PostsController < ApplicationController
 
   def require_login
     unless current_user && current_user.email == "lucas.gordon@queensu.ca"
-      flash[:error] = "Only Lucas can create posts, nice try!"
-      redirect_to root_path
+      redirect_to root_path, notice: "Only Lucas can create posts, nice try!"
     end
   end
 end

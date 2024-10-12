@@ -16,4 +16,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  get 'posts/:id/delete', to: 'posts#destroy', as: :delete_post
 end
