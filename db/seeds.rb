@@ -9,4 +9,12 @@
 #   end
 
 
-User.create!(name: "Lucas Gordon", email: "lucas.gordon@queensu.ca", password: "password")
+User.create!(name: "Lucas Gordon", email: "lucas.gordon@queensu.ca", password: "password") if User.count.zero?
+
+20.times do
+  Post.create!(
+    title: Faker::Lorem.sentence,
+    body: Faker::Lorem.paragraph(sentence_count: 100, supplemental: true, random_sentences_to_add: 50),
+    published: true
+  )
+end

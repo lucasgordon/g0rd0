@@ -18,7 +18,11 @@
   </head>
 
   <body class="bg-dark text-white">
-    <%= render "shared/nav" %>
-    <%= yield %>
+    <header class="bg-dark" style="position: sticky; top: 0; z-index: 1000;">
+      <%= render "shared/nav" %>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
