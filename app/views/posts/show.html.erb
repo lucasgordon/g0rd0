@@ -31,7 +31,7 @@
       <div class="mb-4">
         <h1><%= @post.title %></h1>
         <p class="text-secondary d-flex justify-content-between align-items-center">
-          <span><%= @post.created_at.strftime("%B %d, %Y") %> | Written by Lucas Gordon | <%= @post.views %> views</span>
+          <span><%= @post.created_at.strftime("%B %d, %Y") %> | Written by Lucas Gordon | <%= number_with_delimiter(@post.views) %> views</span>
           <% if lucas? %>
             <span class="d-flex gap-3">
               <%= link_to "Edit", edit_post_path(@post), class: "text-white" %>

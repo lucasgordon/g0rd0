@@ -11,6 +11,8 @@ class PostsController < ApplicationController
     unless @post.published? || lucas?
       redirect_to root_path, notice: "Lucas is still working on this post. Will it be ready soon? Who knows..."
     end
+
+    @post.update!(views: @post.views + 1)
   end
 
   def all_posts
