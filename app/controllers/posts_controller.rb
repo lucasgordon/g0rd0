@@ -12,15 +12,19 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
+    require_login
+
     @post = Post.new
   end
 
   # GET /posts/1/edit
   def edit
+    require_login
   end
 
   # POST /posts or /posts.json
   def create
+    require_login
     @post = Post.new(post_params)
 
     respond_to do |format|
@@ -36,6 +40,8 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
+    require_login
+
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: "Post was successfully updated." }
@@ -49,6 +55,8 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1 or /posts/1.json
   def destroy
+    require_login
+
     @post.destroy!
 
     respond_to do |format|
@@ -67,4 +75,11 @@ class PostsController < ApplicationController
     def post_params
       params.fetch(:post, {}).permit(:title, :body)
     end
+
+  def require_login
+    unless current_user && current_user.email == "lucas.gordon@queensu.ca"
+      flash[:error] = "Only Lucas can create posts, nice try!"
+      redirect_to root_path
+    end
+  end
 end

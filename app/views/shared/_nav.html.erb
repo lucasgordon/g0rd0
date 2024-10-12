@@ -1,45 +1,51 @@
-<div class="border-contrast-bottom" >
-  <div class="align-items-center text-left">
-    <h1 class="m-3 mb-2"><%= link_to "LUCAS GORDON", root_path, class: "text-decoration-none text-reset" %></h1>
-    <div class="text-secondary vw-100 mb-2">
-      <p class="mx-3 mb-1 text-secondary d-inline-flex align-items-center">
-        <%= link_to "g0rd0.com", root_path, class: "text-decoration-none text-secondary" %>
-        <span class="mx-2">|</span>
-        <a
-          href="https://x.com/morninggordo"
-          target="_blank"
-          class="text-secondary"
-          ><i class="bi bi-twitter-x"></i
-        ></a>
-        <span class="mx-2">|</span>
-        <a
-          href="https://www.linkedin.com/in/lucgordon"
-          target="_blank"
-          class="text-secondary"
-          ><i class="bi bi-linkedin"></i
-        ></a>
-        <span class="mx-2">|</span>
-        <a
-          href="https://github.com/lucasgordon"
-          target="_blank"
-          class="text-secondary"
-          ><i class="bi bi-github"></i
-        ></a>
-        <span class="mx-2">|</span>
-        <a
-          href="https://www.youtube.com/@gordonlucas"
-          target="_blank"
-          class="text-secondary"
-          ><i class="bi bi-youtube"></i
-        ></a>
-        <span class="mx-2">|</span>
-        <a
-          href="mailto:lucas.gordon@queensu.ca"
-          target="mailto:lucas.gordon@queensu.ca"
-          class="text-secondary"
-          ><i class="bi bi-envelope"></i
-        ></a>
-      </p>
+<div class="border-contrast-bottom">
+  <div class="d-flex justify-content-between align-items-center">
+    <div>
+      <h1 class="m-3 mb-2"><%= link_to "LUCAS GORDON", root_path, class: "text-decoration-none text-reset" %></h1>
+      <div class="text-secondary mb-2">
+        <p class="mx-3 mb-1 text-secondary d-inline-flex align-items-center">
+          <%= link_to "g0rd0.com", root_path, class: "text-decoration-none text-secondary" %>
+          <span class="mx-2">|</span>
+          <a
+            href="https://x.com/morninggordo"
+            target="_blank"
+            class="text-secondary"
+            ><i class="bi bi-twitter-x"></i
+          ></a>
+          <span class="mx-2">|</span>
+          <a
+            href="https://www.linkedin.com/in/lucgordon"
+            target="_blank"
+            class="text-secondary"
+            ><i class="bi bi-linkedin"></i
+          ></a>
+          <span class="mx-2">|</span>
+          <a
+            href="https://github.com/lucasgordon"
+            target="_blank"
+            class="text-secondary"
+            ><i class="bi bi-github"></i
+          ></a>
+          <span class="mx-2">|</span>
+          <a
+            href="https://www.youtube.com/@gordonlucas"
+            target="_blank"
+            class="text-secondary"
+            ><i class="bi bi-youtube"></i
+          ></a>
+          <span class="mx-2">|</span>
+          <a
+            href="mailto:lucas.gordon@queensu.ca"
+            target="mailto:lucas.gordon@queensu.ca"
+            class="text-secondary"
+            ><i class="bi bi-envelope"></i
+          ></a>
+        </p>
+      </div>
     </div>
+
+    <% if lucas? %>
+      <%= link_to "New Post", new_post_path, class: "btn btn-secondary m-3" %>
+    <% end %>
   </div>
 </div>
