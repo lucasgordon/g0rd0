@@ -11,4 +11,8 @@ module ApplicationHelper
     }
     Redcarpet::Markdown.new(renderer, options).render(text).html_safe
   end
+
+  def current_user
+    User.find(session[:user_id]) if session[:user_id]
+  end
 end

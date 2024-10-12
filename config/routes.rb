@@ -7,6 +7,13 @@ Rails.application.routes.draw do
 
   root "posts#index"
 
+  resource :session, only: [:new, :create, :destroy]
+
+  resource :user, only: [:new, :create]
+
+  get "gordo_sign_in", to: "sessions#new"
+
+
   # Defines the root path route ("/")
   # root "posts#index"
 end
