@@ -8,6 +8,13 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    unless @post.published? || lucas?
+      redirect_to root_path
+    end
+  end
+
+  def all_posts
+    @posts = Post.all.order(created_at: :desc)
   end
 
   # GET /posts/new
@@ -73,7 +80,7 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.fetch(:post, {}).permit(:title, :body)
+      params.fetch(:post, {}).permit(:title, :body, :published, :featured)
     end
 
   def require_login
