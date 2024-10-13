@@ -18,6 +18,12 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <meta property="og:title" content="G0RD0.com">
+    <meta property="og:description" content="A compilation of my brief thoughts and quick creations.">
+    <meta property="og:image" content="<%= image_url('render_display.png') %>">
+    <meta property="og:url" content="<%= request.original_url %>">
+    <meta property="og:type" content="website">
   </head>
 
   <body class="bg-dark text-white">
