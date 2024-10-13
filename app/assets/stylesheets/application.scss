@@ -18,5 +18,7 @@ body {
 }
 
 .border-contrast-right {
-  border-right: 0.7px solid rgba(255, 255, 255, 0.7);
+  @media (min-width: 768px) {
+    border-right: 0.7px solid rgba(255, 255, 255, 0.7);
+  }
 }
