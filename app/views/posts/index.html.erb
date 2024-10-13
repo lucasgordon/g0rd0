@@ -11,13 +11,26 @@
   <% @posts.published.each do |post| %>
     <div class="row mb-4">
       <div class="col-md-2 col-lg-1 text-md-end mb-2 mb-md-0">
-        <small class="text-secondary">
-          <%= post.created_at.strftime("%b %d, %Y") %>
+        <small class="text-secondary d-none d-md-block">
+          <%= post.created_at.strftime("%b %d, %Y") %><br>
+          <%= post.views %> views
+          <% if post.created_at > 1.week.ago %>
+            <br>
+            <span class="badge bg-secondary">New!</span>
+          <% end %>
+        </small>
+        <small class="text-secondary d-md-none">
+          <%= post.created_at.strftime("%b %d, %Y") %> | <%= post.views %> views
+          <% if post.created_at > 1.week.ago %>
+            | <span class="badge bg-secondary">New!</span>
+          <% end %>
         </small>
       </div>
       <div class="col-md-10 col-lg-11">
         <h4><%= link_to post.title, post_path(post), class: "text-light text-decoration-none" %></h4>
-        <p class="text-secondary mb-0"><%= truncate(post.body, length: 300, separator: ' ') %></p>
+        <%= link_to post_path(post), class: "text-secondary text-decoration-none" do %>
+          <p class="mb-0"><%= truncate(post.body, length: 300, separator: ' ') %></p>
+        <% end %>
       </div>
     </div>
     <hr class="border-secondary">
