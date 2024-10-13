@@ -11,7 +11,7 @@
 
     <!-- Collapsible content -->
     <div class="collapse d-lg-block" id="sidebarMenu">
-      <div class="sidebar-content" style="height: 84vh; overflow-y: auto;">
+      <div class="sidebar-content d-lg-block" style="max-height: 84vh; overflow-y: auto;">
         <% Post.published.each do |post| %>
           <%= link_to post_path(post), class: "text-decoration-none #{post == @post ? 'text-light' : 'text-secondary'} d-block" do %>
             <div class="post-link px-4 <%= 'bg-secondary' if post == @post %> d-flex align-items-center" style="height: 60px;">
@@ -27,7 +27,7 @@
   </div>
 
   <div class="col-lg-10 col-md-9 col-12">
-    <div class="container pt-5 d-flex flex-column" style="height: 85vh;">
+    <div class="container pt-5 d-flex flex-column">
       <% if notice.present? %>
         <div class="alert alert-success alert-dismissible fade show" role="alert">
           <%= notice %>
@@ -48,7 +48,7 @@
         </p>
       </div>
       
-      <div class="flex-grow-1 overflow-auto">
+      <div class="overflow-auto">
         <%= markdown(@post.body) %>
       </div>
     </div>
