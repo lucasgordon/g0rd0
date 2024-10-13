@@ -15,8 +15,10 @@ module ApplicationHelper
       tables: true,
       space_after_headers: true,
       disable_indented_code_blocks: true
+
     }
-    Redcarpet::Markdown.new(renderer, options).render(text).html_safe
+    rendered_html = Redcarpet::Markdown.new(renderer, options).render(text)
+    "<div style='line-height: 1.75;'>#{rendered_html}</div>".html_safe
   end
 
   def current_user
@@ -24,6 +26,10 @@ module ApplicationHelper
   end
 
   class CustomHtmlRenderer < Redcarpet::Render::HTML
+    def header(text, header_level)
+      "<br><br><h#{header_level}>#{text}</h#{header_level}>"
+    end
+
     def image(link, title, alt_text)
       %(<div class="image-container">
           <img src="#{link}" title="#{title}" alt="#{alt_text}" style="max-width: 600px; align-self: center; height: auto; display: block; margin: 0 auto 10px;">
