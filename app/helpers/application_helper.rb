@@ -31,8 +31,8 @@ module ApplicationHelper
     end
 
     def image(link, title, alt_text)
-      %(<div class="image-container">
-          <img src="#{link}" title="#{title}" alt="#{alt_text}" style="max-width: 600px; align-self: center; height: auto; display: block; margin: 0 auto 10px;">
+      %(<div class="image-container mb-0">
+          <img src="#{link}" title="#{title}" alt="#{alt_text}" style="max-width: 100%; width: auto; height: auto; display: block; margin: 0 auto 10px;">
           <p class="text-secondary" style="text-align: center; margin-top: 5px; margin-bottom: 0;">#{alt_text}</p>
         </div>)
     end

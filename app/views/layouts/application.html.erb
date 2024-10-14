@@ -37,11 +37,11 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="bg-dark text-white">
+  <body class="bg-dark text-white" style="overflow-x: hidden; width: 100vw;">
     <header class="bg-dark" style="position: sticky; top: 0; z-index: 1000;">
       <%= render "shared/nav" %>
     </header>
-    <main>
+    <main class="container-fluid px-0">
       <%= yield %>
     </main>
   </body>
