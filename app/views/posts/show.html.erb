@@ -1,3 +1,6 @@
+<% content_for :title, @post.title %>
+<% content_for :description, @post.body.to_s[0..100] %>
+
 <div class="row mx-0" style="max-width: 100vw; overflow-x: hidden;">
   
   <div class="col-lg-2 col-md-3 col-12 border-contrast-right px-0">
@@ -40,7 +43,6 @@
           <% if lucas? %>
             <span class="d-flex gap-3 mt-2">
               <%= link_to "Edit", edit_post_path(@post), class: "text-white" %>
-              <%= link_to "Delete", delete_post_path(@post), class: "text-red", data: { turbo_confirm: "Are you sure you want to delete this post?" } %>
             </span>
           <% end %>
         </p>
