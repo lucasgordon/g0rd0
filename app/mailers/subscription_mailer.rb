@@ -1,5 +1,5 @@
 class SubscriptionMailer < ApplicationMailer
-  default from: 'g0rd0posts@gmail.com'
+  default from: 'Lucas Gordon <lucastgordon@gmail.com>'
 
   def confirmation_email(email)
     @email = email
