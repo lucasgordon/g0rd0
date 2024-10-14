@@ -1,16 +1,34 @@
 @import "bootstrap";
-
 @import "bootstrap-icons";
 
 @font-face {
   font-family: 'BerkeleyMono';
-  src: url(asset-path('BerkeleyMonoTrial-Regular.ttf')) format('truetype');
+  src: url(asset-path('BerkeleyMono-Regular.woff')) format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'BerkeleyMono';
+  src: url(asset-path('BerkeleyMono-Bold.woff')) format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BerkeleyMono';
+  src: url(asset-path('BerkeleyMono-Italic.woff')) format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
 body {
   font-family: 'BerkeleyMono', sans-serif;
+}
+
+strong, b {
+  font-family: 'BerkeleyMono' !important;
+  font-weight: bold !important;
 }
 
 .border-contrast-bottom {
