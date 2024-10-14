@@ -13,15 +13,13 @@
 
     <div class="collapse d-lg-block" id="sidebarMenu">
       <div class="sidebar-content d-lg-block" style="max-height: 84vh; overflow-y: auto;">
-        <% Post.published.each do |post| %>
+        <% Post.published.limit(25).each do |post| %>
           <%= link_to post_path(post), class: "text-decoration-none #{post == @post ? 'text-light' : 'text-secondary'} d-block" do %>
             <div class="post-link px-4 <%= 'bg-secondary' if post == @post %> d-flex align-items-center" style="height: 60px;">
               <%= truncate(post.title, length: 35) %>
             </div>
           <% end %>
-          <% unless post == Post.published.last %>
-            <hr class="my-0 border-secondary">
-          <% end %>
+          <hr class="my-0 border-secondary">
         <% end %>
       </div>
     </div>
