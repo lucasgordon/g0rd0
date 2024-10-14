@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get "gordo_sign_in", to: "sessions#new"
 
+  resources :emails, only: [:create]
+
 
   # Defines the root path route ("/")
   # root "posts#index"

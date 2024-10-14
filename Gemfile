@@ -69,3 +69,5 @@ end
 gem "meta-tags", "~> 2.22"
 
 gem "webpacker", "~> 5.4"
+
+gem "sqlite3", "~> 2.1"
