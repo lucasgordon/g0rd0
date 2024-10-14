@@ -2,6 +2,14 @@
 <html prefix="og: http://ogp.me/ns#">
   <head>
     <title><%= yield(:title) %></title>
+
+    <meta property="og:title" content="<%= yield(:og_title) || yield(:title) %>" />
+    <meta property="og:type" content="<%= yield(:og_type) || 'article' %>" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= h(yield(:og_image) || "https://i.ibb.co/4Kfm5xt/Screenshot-2024-10-13-at-12-38-34.png") %>" />
+    <meta property="og:description" content="<%= h(yield(:og_description) || yield(:description) || "Lucas Gordon's brief thoughts and quick creations.") %>" />
+    <meta property="og:site_name" content="G0RD0.com" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
@@ -18,12 +26,6 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-
-    <meta property="og:title" content="<%= yield(:og_title) || yield(:title) %>" />
-    <meta property="og:type" content="<%= yield(:og_type) || 'website' %>" />
-    <meta property="og:url" content="<%= request.original_url %>" />
-    <meta property="og:image" content="<%= yield(:og_image) || asset_url('render_display.png') %>" />
-    <meta property="og:description" content="<%= yield(:og_description) || yield(:description) || "Lucas Gordon's brief thoughts and quick creations." %>" />
   </head>
 
   <body class="bg-dark text-white">
