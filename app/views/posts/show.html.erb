@@ -12,7 +12,7 @@
     </div>
 
     <div class="collapse d-lg-block" id="sidebarMenu">
-      <div class="sidebar-content d-lg-block" style="max-height: 84vh; overflow-y: auto;">
+      <div class="sidebar-content d-lg-block" style="height: 84vh; overflow-y: auto;">
         <% Post.published.limit(25).each do |post| %>
           <%= link_to post_path(post), class: "text-decoration-none #{post == @post ? 'text-light' : 'text-secondary'} d-block" do %>
             <div class="post-link px-4 <%= 'bg-secondary' if post == @post %> d-flex align-items-center" style="height: 60px;">
@@ -25,7 +25,7 @@
     </div>
   </div>
 
-  <div class="col-lg-10 col-md-9 col-12 px-0 d-flex flex-column" style="max-height: 84vh; overflow-y: auto;">
+  <div class="col-lg-10 col-md-9 col-12 px-0 d-flex flex-column" style="height: 84vh; overflow-y: auto;">
     <div class="container-fluid pt-5 d-flex flex-column px-sm-5 ps-4 pe-3">
       
       <% if notice.present? %>
@@ -49,6 +49,9 @@
       
       <div class="overflow-auto" style="width: 100%; word-wrap: break-word;">
         <%= markdown(@post.body) %>
+        <div class="text-secondary my-5">
+          G0RD0.com
+        </div>
       </div>
     </div>
   </div>
