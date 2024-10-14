@@ -67,3 +67,5 @@ group :test do
 end
 
 gem "meta-tags", "~> 2.22"
+
+gem "webpacker", "~> 5.4"
