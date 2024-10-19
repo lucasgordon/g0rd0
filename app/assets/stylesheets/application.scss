@@ -23,10 +23,11 @@
 }
 
 body {
-  font-family: 'BerkeleyMono', sans-serif;
+  font-family: 'BerkeleyMono', Arial;
 }
 
-strong, b {
+strong, 
+b {
   font-family: 'BerkeleyMono' !important;
   font-weight: bold !important;
 }
@@ -38,5 +39,31 @@ strong, b {
 .border-contrast-right {
   @media (min-width: 768px) {
     border-right: 0.7px solid rgba(255, 255, 255, 0.7);
+  }
+}
+
+.bg-dark{
+  background-color: #121212 !important;
+}
+
+.text-secondary {
+  color: rgb(168, 168, 168) !important;
+}
+
+.custom-placeholder::placeholder {
+  color: rgb(168, 168, 168) !important;
+}
+
+.responsive-image {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .responsive-image {
+    max-width: 700px;
   }
 }

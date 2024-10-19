@@ -9,25 +9,10 @@
   <% end %>
 
   <!-- emails -->
-  <div class="row mb-4">
-    <div class="col-12 col-md-2 col-lg-1 text-md-end mb-2">
-      <small class="text-secondary">
-        <i class="bi bi-arrow-right"></i>
-        <i class="bi bi-envelope"></i>
-      </small>
-    </div>
-    <div class="col-12 col-md-10 col-lg-11">
-      <h4 class="mb-2">Subscribe to new posts</h4>
-      <%= form_with url: emails_path, method: :post, local: true, scope: :email do |form| %>
-        <div class="input-group">
-          <%= form.email_field :email, placeholder: "Your email", class: "form-control bg-dark text-white border-secondary" %>
-          <%= form.submit "Subscribe", class: "btn btn-secondary" %>
-        </div>
-      <% end %>
-    </div>
+  <div class="d-md-none">
+    <%= render "shared/email_form" %>
+    <hr class="border-secondary">
   </div>
-  <hr class="border-secondary">
-
   <% @posts.published.each do |post| %>
     <div class="row mb-4">
       <div class="col-md-2 col-lg-1 text-md-end mb-2 mb-md-0">
