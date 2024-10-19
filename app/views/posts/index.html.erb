@@ -10,7 +10,9 @@
 
   <!-- emails -->
   <div class="d-md-none">
-    <%= render "shared/email_form" %>
+    <div class="mb-4">
+      <%= render "shared/email_form" %>
+    </div>
     <hr class="border-secondary">
   </div>
   <% @posts.published.each do |post| %>
