@@ -68,4 +68,4 @@ end
 
 gem "meta-tags", "~> 2.22"
 
-gem "sqlite3", "~> 2.1"
+gem "sqlite3", "~> 2.3"
